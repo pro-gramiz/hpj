@@ -12,5 +12,10 @@ print(sum(a))
 #answer2
 import re
 print(re.compile('[\d]').findall(input()))
-    
+l=[]
+for i in range(len(a)):
+    l.append(int(a[i]))
+print(sum(l))
+
+
 
