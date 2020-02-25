@@ -23,7 +23,6 @@ def lis(l,n,k):
                     max = k[j]
     #print("lis",max)
     return max
-
 def lds(l,n,k):
     max = 0
     for j in range(1,len(l)):
