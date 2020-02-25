@@ -17,3 +17,25 @@ The possible permutations in lex order are,
 The Word for rank 2 us ACB
 ************************************************************************************************************************************
 #answer
+from math import factorial as ft
+def rep(n):
+    s = set(n)
+    res = 1
+    for i in s:
+        res = res * ft(n.count(i))
+    return res
+def least(n,k):
+    ct = 0
+    for i in n:
+        if(i<k):
+            ct += 1
+    return ct
+def rank(s):
+    st = list(s)
+    rank = 1
+    n = len(st)
+
+    for i in range(n):
+        r = rep(st[i:])
+        rank += (least(st[i:],st[i])*ft(n-i-1))//r
+    return rank
