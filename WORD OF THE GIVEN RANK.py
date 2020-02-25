@@ -15,3 +15,5 @@ Explanation 0
 The possible permutations in lex order are,
 1 ABC 2 ACB 3 BAC 4 BCA 5 CAB 6 CBA
 The Word for rank 2 us ACB
+************************************************************************************************************************************
+#answer
