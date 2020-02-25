@@ -11,3 +11,12 @@ Sample Input 0
 Sample Output 0
 6
 
+***********************************************************************************************************************************
+#answer
+l=list(map(int,input().split()))
+k=[1 for i in range(len(l))]
+for j in range(1,len(l)):
+    for i in range(j):
+        if l[j]<l[i] and k[i]+1>k[j]:
+            k[j]=k[i]+1
+print(max(k))
