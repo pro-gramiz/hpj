@@ -12,3 +12,16 @@ Sample Input 0
 Sample Output 0
 2
 
+
+*******************************************************
+#answer
+a=int(input())
+b=list(map(int,input().split()))
+g=1
+b.sort()
+for i in b:
+    if(g>=i):
+        g+=i
+    else:
+        break
+print(g)
