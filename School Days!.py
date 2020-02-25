@@ -11,4 +11,36 @@ Sample Input 0
 1 2 3 9 4 5
 Sample Output 0
 1
+***********************************************************************************************************************************
+#answer
+def lis(l,n,k):
+    max = 0
+    for j in range(1,len(l)):
+        for i in range(j):
+            if l[j]>l[i] and k[i]+1>k[j]:
+                k[j] = k[i] + 1
+                if max<k[j]:
+                    max = k[j]
+    #print("lis",max)
+    return max
+
+def lds(l,n,k):
+    max = 0
+    for j in range(1,len(l)):
+        for i in range(j):
+            if l[j]<l[i] and k[i]+1>k[j]:
+                k[j] = k[i] + 1
+                if max<k[j]:
+                    max = k[j]
+    #print("lds",max)
+    return max
+
+    
+n = int(input())
+l = list(map(int,input().split()))
+k = [1 for i in range(n)]
+a = n - lds(l,n,k)
+b = n - lis(l,n,k)
+#print(a,b)
+print(a if a<b else b)
 
