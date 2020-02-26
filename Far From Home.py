@@ -13,4 +13,35 @@ Sample Output 0
 
 ************************************************************************************************************************************
 #answer
+from math import sqrt as sq
+l1=list(map(str,input().split()))
+l=[]
+x=0
+y=0
+temp=0
+for i in l1:
+    if i =='N':
+        x+=int(temp)
+        temp=0
+    elif i=='E':
+        y+=int(temp)
+        temp=0
+    elif i=='S':
+        x-=int(temp)
+        temp=0
+    elif i=='W':
+        y-=int(temp)
+        temp=0
+    elif i!=' ':
+        temp=temp*10+int(ord(i)-48)
+result=sq(pow(x,2)+pow(y,2))
+if x>0:
+    l.append('S')
+elif x<0:
+    l.append('N')
+if y>0:
+    l.append('W')
+elif y<0:
+    l.append('E')
+print("%.2f"%result,"".join(l))
 
