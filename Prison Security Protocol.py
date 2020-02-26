@@ -22,3 +22,12 @@ Sample Input 0
 Sample Output 0
 
 189498297338
+**********************************************************************************************************************************
+#answer
+a=int(input())
+b=list(map(int,input().split()))
+b.sort()
+sum=(a-1)*b[0]
+for i in range(1,a):
+    sum+=(a-i)*b[i]
+print(sum)
