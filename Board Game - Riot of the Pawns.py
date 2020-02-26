@@ -18,4 +18,55 @@ Sample Output 0
 
 ***********************************************************************************************************************************
 #answer
+def check(k,i,j,n):
+    temp_i = i
+    temp_j = j
+    
+    m = 0
+    #left_up
+    while(temp_i-1>=0 and temp_j-1>=0):
+        if(k[temp_i-1][temp_j-1]=='B'):
+            m+=1
+        temp_i-=1
+        temp_j-=1
+    temp_i = i
+    temp_j = j
+    #left_down
+    while(temp_i+1<=n-1 and temp_j-1>=0):
+        if(k[temp_i+1][temp_j-1]=='B'):
+            m+=1
+        temp_i+=1
+        temp_j-=1
+    temp_i = i
+    temp_j = j
+    #right_up
+    while(temp_i-1>=0 and temp_j+1<=n-1):
+        if(k[temp_i-1][temp_j+1]=='B'):
+            m+=1
+        temp_i-=1
+        temp_j+=1
+    temp_i = i
+    temp_j = j
+    #right_down
+    while(temp_i+1<=n-1 and temp_j+1<=n-1):
+        if(k[temp_i+1][temp_j+1]=='B'):
+            m+=1
+        temp_i+=1
+        temp_j+=1
+    return m
 
+n = int(input())
+#n = 5
+k = [[0 for i in range(n)] for j in range(n)]
+b_count = int(input())
+for i in range(b_count):
+    x,y = map(int,input().split())
+    k[x][y] = 'B'
+c = 0
+for i in range(len(k)):
+    for j in range(len(k[0])):
+        if(k[i][j]=='B'):
+            c = c + check(k,i,j,n)
+print(c//2)
+for i in k:
+    print(*i)
