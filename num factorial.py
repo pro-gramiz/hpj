@@ -1,26 +1,30 @@
-m,n=map(int,input().split())
-i=2
-c=0
-l=[]
-k=[]
-while(n%i<n):
-    n=n//i
-    c=c+n
-if(m==2):
-    print(c)
-else:
-    for i in range(2,m):
-        d=0
-        while(m%i==0):
-            d=d+1
-            m=m//i
-        if(d>=1):
-            l.append(d)
-    print(l)
-    for i in l:
-        s=c//i
-        k.append(s)
-    print(min(k))
-    **************************************************************************************************************************************
-    i/p:2 10
+def primefactors(n):
+    i = 2
+    fac = []
+    while i*i <=n:
+        if n%i:
+            i+=1
+        else:
+            n//=i
+            fac.append(i)
+    if n > 1:
+        fac.append(n)
+    return fac
+x = int(input())
+y = int(input())
+fac = primefactors(y)
+#print(fac)
+rem_dup = list(set(fac))
+ans = []
+for i in rem_dup:
+    temp = x
+    sum = 0
+    while(temp):
+        temp//=i
+        sum+=temp
+    ans.append(sum//fac.count(i))
+#print(ans)
+print(min(ans))
+***************************************************************************************************************************************
+    i/p:10 2
     o/p:8
