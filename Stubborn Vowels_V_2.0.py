@@ -13,3 +13,17 @@ Sample Output 0
 ssingim
 Explanation 0
 m + i + ss + i + ng all the fragments of string - {m,ss,ng} will be rotated once to the left - {ss,ng,m} OUTPUT: ssingim
+************************************************************
+#answer
+from re import *
+s,n=input().split()
+k='[a,e,i,o,u,A,E,I,O,U]+'
+al=split(k,s)
+x=int(n)%len(al)
+for _ in range(x):
+    al=al[1:]+al[:1]
+v=findall(k,s)
+res=al[0]
+for i in range(1,len(al)):
+    res+=(v[i-1]+al[i])
+print(res)
