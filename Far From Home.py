@@ -12,7 +12,7 @@ Sample Output 0
 5.00SW
 
 ************************************************************************************************************************************
-#answer
+#answer1
 from math import sqrt as sq
 l1=list(map(str,input().split()))
 l=[]
@@ -44,4 +44,44 @@ if y>0:
 elif y<0:
     l.append('E')
 print("%.2f"%result,"".join(l))
+*********************************************************************************************
+#answer2
+import math
+a=input().split()
+x,y=0,0
+td=0
+for i in a:
+    td=td+int(i[:-1])
+    if(i[-1]=="N"):
+        y+=int(i[:-1])
+    elif(i[-1]=="S"):
+        y-=int(i[:-1])
+    elif(i[-1]=="E"):
+        x+=int(i[:-1])
+    else:
+        x-=int(i[:-1])
+if(x==0 and y>0):
+    way="S"
+elif(x==0 and y<0):
+    way="N"
+elif(x>0 and y==0):
+    way="W"
+elif(x<0 and y==0):
+    way("E")
+elif(x>0 and y>0):
+    way="SW"
+elif(x<0 and y<0):
+    way="NE"
+elif(x<0 and y>0):
+    way="SE"
+elif(x==0 and y==0):
+    way="You are at center"
+else:
+    way="NW"
+dis=math.sqrt((x**2)+(y**2))
+print("%.2f%s"%(dis,way))
+
+
+
+
 
