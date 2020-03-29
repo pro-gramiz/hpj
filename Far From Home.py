@@ -67,7 +67,7 @@ elif(x==0 and y<0):
 elif(x>0 and y==0):
     way="W"
 elif(x<0 and y==0):
-    way("E")
+    way="E"
 elif(x>0 and y>0):
     way="SW"
 elif(x<0 and y<0):
@@ -80,7 +80,6 @@ else:
     way="NW"
 dis=math.sqrt((x**2)+(y**2))
 print("%.2f%s"%(dis,way))
-
 
 
 
