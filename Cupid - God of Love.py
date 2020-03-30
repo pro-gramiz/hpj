@@ -14,3 +14,24 @@ Sample Output 0
 24
 ************************************************************************************************************************************
 #answer
+n=int(input())
+x=list(map(int,input().split()))
+a,b=map(int,input().split())
+c=[]
+d=[]
+if(x.count(a)==1 and x.count(b)==1):
+    print(x.index(a)-x.index(b)-1 if x.index(a)>x.index(b) else x.index(b)-x.index(a)-1)
+elif(x.count(a)>1 or x.count(b)>1):
+    for i in range(n):
+        if a==x[i]:
+            c.append(i)
+        elif b==x[i]:
+            d.append(i)
+    z=n
+    for i in c:
+        for j in d:
+            if i>j and i-j<=z:
+                z=i-j-1
+            elif j>i and j-i<=z:
+                z=j-i-1
+    print(z)
