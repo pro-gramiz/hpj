@@ -1,0 +1,27 @@
+Question 1:
+There are n stairs, a person standing at the bottom wants to reach the top. The person can climb either 1 stair or 2 stairs at a time.
+•	Count the number of ways, the person can reach the top.
+Test Case 1:
+	Input: 5
+	Output: 8
+Test Case 2:
+	Input: 2
+	Output: 2
+
+Question 2:
+Problem Description
+The task is to count all the possible paths from top left to bottom right of a m x n matrix with the constraints that from each cell you can either move only to right or down.
+Input: 
+•	First line consists of T test cases. First line of every test case consists of N and M, denoting the number of rows and number of columns respectively.
+Output: 
+•	Single line output i.e count of all the possible paths from top left to bottom right of a m x n matrix..
+Constraints:
+•	1<=T<=100
+•	1<=N<=100
+•	1<=M<=100
+Test Case 1:
+	Input: 3 3
+	Output: 6
+Test Case 2:
+	Input: 4 3
+	Output: 10
